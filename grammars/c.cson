@@ -23,6 +23,12 @@
     'name': 'keyword.control.c'
   }
   {
+    'match': '\\b(struct|enum)\\s+(\\w+)\\b'
+    'captures':
+      '1': 'name': 'storage.type.c'
+      '2': 'name': 'support.class.c'
+  }
+  {
     'match': '\\b(asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\\b'
     'name': 'storage.type.c'
   }
@@ -236,6 +242,14 @@
       |uintmax_t|uintmax_t)
       \\b'''
     'name': 'support.type.stdint.c'
+  }
+  {
+    'match': '\\b(vec2|vec3|vec4|mat4x4|quat)\\b'
+    'name': 'support.type.linmath.c'
+  }
+  {
+    'match': '\\b([a-z]*_)*[A-Z]\\w*[a-z]\\w*\\b'
+    'name': 'support.class.c'
   }
   {
     'match': '\\b(noErr|kNilOptions|kInvalidID|kVariableLengthArray)\\b'
